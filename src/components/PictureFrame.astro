@@ -1,0 +1,51 @@
+---
+import { type ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+interface Props {
+	image: ImageMetadata;
+  title: string;
+  date: string;
+  info: string;
+}
+
+const {image, title, date, info} = Astro.props;
+---
+
+<div class="photograph">
+  <Image src={image} alt={`${title}の写真`} />
+  <div class="caption">
+    <div class="caption--title">{title}</div>
+    <div class="caption--sub">{`${date} ${info}`}</div>
+  </div>
+</div>
+
+<style lang="scss">
+.photograph {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 12px;
+
+    &--title {
+      font-size: 16px;
+    }
+
+    &--sub {
+      font-size: 12px;
+    }
+  }
+}
+</style>

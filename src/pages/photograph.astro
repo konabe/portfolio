@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PictureFrame from '../components/PictureFrame.astro';
+
+import kasumumonoImage from "../assets/kasumumono.jpg"
+import nanairoImage from "../assets/nanairo.jpg"
+import ataminogakeImage from "../assets/ataminogake.jpg"
+import yuuhiwonozokuImage from "../assets/yuuhiwonozoku.jpg"
+import yuzawanomamorigamiImage from "../assets/yuzawanomamorigami.jpg"
+import yuzawatoyamaImage from "../assets/yuzawatoyama.jpg"
+---
+
+<Layout title="photograph | nabe's gallery">
+  <div class="header-container">
+    <Header />
+  </div>
+  <div class="gallery-container">
+    <h1>ギャラリー</h1>
+    <PictureFrame image={kasumumonoImage} title='『無題』' date="2024/01/03" info='ƒ/4.5 1/1600 120 mm ISO 100' />
+    <PictureFrame image={nanairoImage} title='『無題』' date="2023/12/30" info='ƒ/4 1/800 33.5 mm ISO 125' />
+    <PictureFrame image={ataminogakeImage} title='『熱海』' date="2023/12/29" info='ƒ/7.1 1/800 120 mm ISO 100' />
+    <PictureFrame image={yuuhiwonozokuImage} title='『無題』' date="2023/12/29" info='ƒ/9 1/200 56 mm ISO 250' />
+    <PictureFrame image={yuzawanomamorigamiImage} title='『越後湯沢』' date="2023/12/09" info='ƒ/7.1 1/100 120 mm ISO 100' />
+    <PictureFrame image={yuzawatoyamaImage} title='『越後湯沢』' date="2023/12/09" info='ƒ/7.1 1/200 100 mm ISO 10' />
+  </div>
+</Layout>
+
+<style lang="scss">
+.header-container {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 100vh;
+
+  padding-top: 50vh;
+  padding-bottom: 50vh;
+
+  .photograph {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .caption {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 12px;
+
+      &--title {
+        font-size: 16px;
+      }
+
+      &--sub {
+        font-size: 12px;
+      }
+    }
+  }
+}
+</style>

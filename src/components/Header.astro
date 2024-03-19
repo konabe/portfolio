@@ -1,0 +1,46 @@
+---
+---
+
+<div class="header">
+  <div class="main-title">
+    <a href="/">nabe's gallery</a>
+  </div>
+  <div class="links">
+    <a href="/photograph">photograph</a>
+    <a href="/blog">blog</a>
+    <a href="/app">app</a>
+    <a href="/bio">bio</a>
+  </div>
+</div>
+
+<style lang="scss">
+.header {
+  display: flex;
+  flex-direction: row;
+  column-gap: 64px;
+  
+  .main-title {
+    font-size: 40px;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    column-gap: 32px;
+    align-items: flex-end;
+
+    a {
+      font-size: 24px;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+      color: white;
+    }
+  }
+}
+
+</style>
