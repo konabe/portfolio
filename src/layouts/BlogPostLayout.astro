@@ -1,0 +1,51 @@
+---
+import Header from "@/components/Header.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <div class="root-container">
+    <Header current="/blog" />
+    <div class="contents-container">
+      <div class="post">
+        <div>
+          <h1>{frontmatter.title}</h1>
+          <div class="date">{frontmatter.date}</div>
+        </div>
+        <div>
+          <slot />
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style lang="scss">
+  .root-container {
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+
+    .contents-container {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      background-color: #2b2b2b;
+      border-radius: 8px;
+
+      .post {
+        padding: 40px;
+        color: var(--text-color);
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        .date {
+          text-align: end;
+        }
+      }
+    }
+  }
+</style>

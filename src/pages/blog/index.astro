@@ -1,0 +1,43 @@
+---
+import Header from "@/components/Header.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+const posts = await Astro.glob("../blog/*.md");
+---
+
+<BaseLayout title="blog | nabe's gallery">
+  <div class="root-container">
+    <Header current="/blog" />
+    <div class="contents-container">
+      {
+        posts.map(post => (
+          <div class="post">
+            <h1>{post.frontmatter.title}</h1>
+            <p>{post.frontmatter.date}</p>
+            <p>{post.frontmatter.description}</p>
+            <a href={post.url}>続きを読む</a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <style lang="scss">
+    .root-container {
+      padding-top: 20px;
+      padding-right: 40px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+
+      .contents-container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        background-color: #2b2b2b;
+        border-radius: 8px;
+
+        .post {
+          padding: 40px;
+        }
+      }
+    }
+  </style>
+</BaseLayout>
