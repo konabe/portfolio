@@ -1,0 +1,60 @@
+---
+interface Props {
+  text: string;
+  path: string;
+  isTitle: boolean;
+  hasUnderline: boolean;
+}
+const { text, path, isTitle, hasUnderline } = Astro.props;
+---
+
+<a class:list={[{ current: hasUnderline, title: isTitle }]} href={path}>
+  {text}
+</a>
+
+<style lang="scss">
+  a {
+    font-size: 24px;
+    text-decoration: none;
+    color: var(--color-text);
+    bottom: -1px;
+
+    &.title {
+      font-size: 40px;
+    }
+
+    position: relative;
+
+    // アンダーライン
+    &::after {
+      position: absolute;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 1px;
+      background: white;
+      bottom: -8px;
+      transform: scale(0, 1);
+      transform-origin: right top;
+      transition: transform 0.2s;
+    }
+
+    &:hover::after {
+      transform: scale(1, 1);
+      transform-origin: left top;
+    }
+
+    &.current {
+      &::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: white;
+        bottom: -8px;
+        transform: scale(1, 1);
+      }
+    }
+  }
+</style>
