@@ -2,10 +2,10 @@
 import { Image } from "astro:assets";
 import coverImage from "@/assets/cover.jpg";
 import Header from "@/components/Header.astro";
-import Layout from "@/layouts/Layout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<Layout title="nabe's gallery">
+<BaseLayout title="nabe's gallery">
   <div class="cover">
     <div class="cover--header">
       <Header />
@@ -13,7 +13,7 @@ import Layout from "@/layouts/Layout.astro";
     <Image src={coverImage} alt="cover image" />
     <div class="cover--sentence">暗闇の中で光るものが一番輝いて見える。</div>
   </div>
-</Layout>
+</BaseLayout>
 
 <style lang="scss">
   .cover {

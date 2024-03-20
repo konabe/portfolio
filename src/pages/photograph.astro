@@ -7,10 +7,10 @@ import yuzawanomamorigamiImage from "@/assets/yuzawanomamorigami.jpg";
 import yuzawatoyamaImage from "@/assets/yuzawatoyama.jpg";
 import Header from "@/components/Header.astro";
 import PictureFrame from "@/components/PictureFrame.astro";
-import Layout from "@/layouts/Layout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<Layout title="photograph | nabe's gallery">
+<BaseLayout title="photograph | nabe's gallery">
   <div class="header-container">
     <Header />
   </div>
@@ -53,7 +53,7 @@ import Layout from "@/layouts/Layout.astro";
       info="ƒ/7.1 1/200 100 mm ISO 10"
     />
   </div>
-</Layout>
+</BaseLayout>
 
 <style lang="scss">
   .header-container {
