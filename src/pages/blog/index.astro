@@ -28,6 +28,11 @@ const posts = await Astro.glob("../blog/*.md");
       padding-bottom: 20px;
       padding-left: 40px;
 
+      @media screen and (max-width: 767px) {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
+
       .contents-container {
         margin-top: 40px;
         margin-bottom: 40px;
@@ -36,6 +41,11 @@ const posts = await Astro.glob("../blog/*.md");
 
         .post {
           padding: 40px;
+
+          @media screen and (max-width: 767px) {
+            padding-right: 20px;
+            padding-left: 20px;
+          }
         }
       }
     }
