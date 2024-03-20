@@ -1,10 +1,20 @@
 ---
 import NavigationLink from "@/components/NavigationLink.astro";
+import { Icon } from "astro-icon/components";
 const { current } = Astro.props;
 ---
 
 <div class="header">
   <div class="main-title">
+    <div class="menu-button">
+      <div class="menu-icon">
+        <Icon name="mdi:menu" />
+      </div>
+      <!-- 初期値のクラスを入れる -->
+      <div class="close-icon hidden">
+        <Icon name="mdi:close" />
+      </div>
+    </div>
     <NavigationLink
       text="nabe's gallery"
       path="/"
@@ -40,13 +50,55 @@ const { current } = Astro.props;
   </div>
 </div>
 
+<script>
+  const addEvent = () => {
+    let isOpen = false; // closure
+    const iconButton = document.querySelector(".menu-button");
+    const menuIcon = iconButton?.querySelector(".menu-icon");
+    const closeIcon = iconButton?.querySelector(".close-icon");
+    iconButton?.addEventListener("click", () => {
+      isOpen = !isOpen;
+      document.querySelector(".links")?.classList.toggle("open", isOpen);
+      menuIcon?.classList.toggle("hidden", isOpen);
+      closeIcon?.classList.toggle("hidden", !isOpen);
+      iconButton.querySelector;
+    });
+  };
+  addEvent();
+  document.addEventListener("astro:after-swap", addEvent);
+</script>
+
 <style lang="scss">
   .header {
     display: flex;
     flex-direction: row;
     column-gap: 64px;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      row-gap: 16px;
+    }
 
     .main-title {
+      display: flex;
+      flex-direction: row;
+      column-gap: 16px;
+      align-items: flex-end;
+
+      .menu-icon,
+      .close-icon {
+        display: none;
+      }
+      @media screen and (max-width: 767px) {
+        .menu-icon,
+        .close-icon {
+          display: block;
+          font-size: 2rem;
+
+          &.hidden {
+            display: none;
+          }
+        }
+      }
     }
 
     .links {
@@ -54,6 +106,20 @@ const { current } = Astro.props;
       flex-direction: row;
       column-gap: 32px;
       align-items: flex-end;
+
+      @media screen and (max-width: 767px) {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 16px;
+
+        &.open {
+          display: flex;
+          flex-direction: column;
+          column-gap: 32px;
+          align-items: flex-start;
+        }
+      }
     }
   }
 </style>
