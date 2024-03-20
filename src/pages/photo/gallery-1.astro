@@ -1,10 +1,10 @@
 ---
 import kasumumonoImage from "@/assets/kasumumono.jpg";
-import nanairoImage from "@/assets/nanairo.jpg";
-import ataminogakeImage from "@/assets/ataminogake.jpg";
-import yuuhiwonozokuImage from "@/assets/yuuhiwonozoku.jpg";
-import yuzawanomamorigamiImage from "@/assets/yuzawanomamorigami.jpg";
-import yuzawatoyamaImage from "@/assets/yuzawatoyama.jpg";
+import atagawaparanomaImage from "@/assets/atagawaparanoma.jpg";
+import linemtImage from "@/assets/linemt.jpg";
+import mituketaImage from "@/assets/mituketa.jpg";
+import sarugakyomtImage from "@/assets/sarugakyowithmt.jpg";
+import jogasakicurveImage from "@/assets/jougasakicurve.jpg";
 import Header from "@/components/Header.astro";
 import PictureFrame from "@/components/PictureFrame.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -15,42 +15,42 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <Header current="/photo" />
   </div>
   <div class="gallery-container">
-    <h1>ギャラリー</h1>
+    <h1>2024年ギャラリー</h1>
+    <PictureFrame
+      image={jogasakicurveImage}
+      title="城ケ崎"
+      date="2024/03/17"
+      info="ƒ/4 1/640 24 mm ISO 100"
+    />
+    <PictureFrame
+      image={atagawaparanomaImage}
+      title="熱川"
+      date="2024/03/17"
+      info="ƒ/5 1/1000 24 mm ISO 100"
+    />
+    <PictureFrame
+      image={mituketaImage}
+      title="熱川"
+      date="2024/03/17"
+      info="ƒ/5 1/1250 120 mm ISO 100"
+    />
+    <PictureFrame
+      image={linemtImage}
+      title="無題"
+      date="2024/03/03"
+      info="ƒ/6.3 1/640 101 mm ISO 100"
+    />
+    <PictureFrame
+      image={sarugakyomtImage}
+      title="猿ヶ京"
+      date="2024/03/02"
+      info="ƒ/7.1 1/640 120 mm ISO 100"
+    />
     <PictureFrame
       image={kasumumonoImage}
-      title="『無題』"
+      title="無題"
       date="2024/01/03"
       info="ƒ/4.5 1/1600 120 mm ISO 100"
-    />
-    <PictureFrame
-      image={nanairoImage}
-      title="『無題』"
-      date="2023/12/30"
-      info="ƒ/4 1/800 33.5 mm ISO 125"
-    />
-    <PictureFrame
-      image={ataminogakeImage}
-      title="『熱海』"
-      date="2023/12/29"
-      info="ƒ/7.1 1/800 120 mm ISO 100"
-    />
-    <PictureFrame
-      image={yuuhiwonozokuImage}
-      title="『無題』"
-      date="2023/12/29"
-      info="ƒ/9 1/200 56 mm ISO 250"
-    />
-    <PictureFrame
-      image={yuzawanomamorigamiImage}
-      title="『越後湯沢』"
-      date="2023/12/09"
-      info="ƒ/7.1 1/100 120 mm ISO 100"
-    />
-    <PictureFrame
-      image={yuzawatoyamaImage}
-      title="『越後湯沢』"
-      date="2023/12/09"
-      info="ƒ/7.1 1/200 100 mm ISO 10"
     />
   </div>
 </BaseLayout>

@@ -1,0 +1,63 @@
+---
+import Header from "@/components/Header.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="blog | nabe's gallery">
+  <div class="root-container">
+    <Header current="/blog" />
+    <div class="contents-container">
+      <div class="gallery">
+        <h2>2024年</h2>
+        <a href="/photo/gallery-1">🔗</a>
+      </div>
+      <div class="gallery">
+        <h2>2023年</h2>
+        <a href="/photo/gallery-2">🔗</a>
+      </div>
+    </div>
+
+    <style lang="scss">
+      .root-container {
+        padding-top: 20px;
+        padding-right: 40px;
+        padding-bottom: 20px;
+        padding-left: 40px;
+
+        @media screen and (max-width: 767px) {
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+
+        .contents-container {
+          margin-top: 40px;
+          margin-bottom: 40px;
+
+          display: flex;
+          flex-direction: column;
+          row-gap: 40px;
+
+          .gallery {
+            border-radius: 8px;
+            padding: 40px;
+            background-color: #2b2b2b;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 8px;
+
+            a {
+              text-decoration: none;
+            }
+
+            @media screen and (max-width: 767px) {
+              padding-right: 20px;
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    </style>
+  </div>
+</BaseLayout>

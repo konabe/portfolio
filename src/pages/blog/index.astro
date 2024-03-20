@@ -13,7 +13,6 @@ const posts = await Astro.glob("../blog/*.md");
           <div class="post">
             <h1>{post.frontmatter.title}</h1>
             <p>{post.frontmatter.date}</p>
-            <p>{post.frontmatter.description}</p>
             <a href={post.url}>続きを読む</a>
           </div>
         ))

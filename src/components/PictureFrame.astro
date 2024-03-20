@@ -15,7 +15,7 @@ const { image, title, date, info } = Astro.props;
 <div class="photograph">
   <Image src={image} alt={`${title}の写真`} />
   <div class="caption">
-    <div class="caption--title">{title}</div>
+    <div class="caption--title">『{title}』</div>
     <div class="caption--sub">{`${date} ${info}`}</div>
   </div>
 </div>
