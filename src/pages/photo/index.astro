@@ -8,56 +8,55 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
     <Header current="/photo" />
     <div class="contents-container">
       <div class="gallery">
-        <h2>2024年</h2>
-        <a href="/photo/gallery-1">🔗</a>
+        <div><h2><a href="/photo/gallery-1">『2024年』</a></h2></div>
+        <div>2024年撮影のお気に入りの写真集</div>
       </div>
       <div class="gallery">
-        <h2>2023年</h2>
-        <a href="/photo/gallery-2">🔗</a>
+        <h2><a href="/photo/gallery-2">『2023年』</a></h2>
+        <div>2023年撮影のお気に入りの写真集</div>
       </div>
     </div>
+  </div>
 
-    <style lang="scss">
-      .root-container {
-        padding-top: 20px;
-        padding-right: 40px;
-        padding-bottom: 20px;
-        padding-left: 40px;
+  <style lang="scss">
+    .root-container {
+      padding-top: 20px;
+      padding-right: 40px;
+      padding-bottom: 20px;
+      padding-left: 40px;
 
-        @media screen and (max-width: 767px) {
-          padding-right: 20px;
-          padding-left: 20px;
-        }
+      @media screen and (max-width: 767px) {
+        padding-right: 20px;
+        padding-left: 20px;
+      }
 
-        .contents-container {
-          margin-top: 40px;
-          margin-bottom: 40px;
+      .contents-container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        .gallery {
+          border-radius: 8px;
+          padding: 40px;
+          background-color: #2b2b2b;
 
           display: flex;
           flex-direction: column;
-          row-gap: 40px;
+          row-gap: 16px;
 
-          .gallery {
-            border-radius: 8px;
-            padding: 40px;
-            background-color: #2b2b2b;
+          a {
+            text-decoration: none;
+          }
 
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            column-gap: 8px;
-
-            a {
-              text-decoration: none;
-            }
-
-            @media screen and (max-width: 767px) {
-              padding-right: 20px;
-              padding-left: 20px;
-            }
+          @media screen and (max-width: 767px) {
+            padding-right: 20px;
+            padding-left: 20px;
           }
         }
       }
-    </style>
-  </div>
+    }
+  </style>
 </BaseLayout>
